@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = true; 
+option java_outer_classname = "TestProto";
+option objc_class_prefix = "Tp";
+import "google/protobuf/any.proto";
+
+package test; 
+
+service TestIt {
+    rpc ping ( google.protobuf.Any ) returns (google.protobuf.Any) {}
+}
