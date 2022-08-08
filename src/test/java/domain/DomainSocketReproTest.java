@@ -16,9 +16,9 @@ import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.StreamObserver;
+import io.netty.channel.kqueue.KQueueDomainSocketChannel;
 import io.netty.channel.kqueue.KQueueEventLoopGroup;
 import io.netty.channel.kqueue.KQueueServerDomainSocketChannel;
-import io.netty.channel.kqueue.KQueueSocketChannel;
 import io.netty.channel.unix.DomainSocketAddress;
 import test.TestItGrpc;
 import test.TestItGrpc.TestItImplBase;
@@ -53,7 +53,7 @@ public class DomainSocketReproTest {
 
         ManagedChannel channel = NettyChannelBuilder.forAddress(new DomainSocketAddress(socketPath.toFile()))
                                                     .eventLoopGroup(new KQueueEventLoopGroup())
-                                                    .channelType(KQueueSocketChannel.class)
+                                                    .channelType(KQueueDomainSocketChannel.class)
                                                     .keepAliveTime(1, TimeUnit.MILLISECONDS)
                                                     .usePlaintext()
                                                     .build();
