@@ -8,8 +8,8 @@
 
 
     <properties>
-        <grpc.version>1.48.0</grpc.version>
-        <protobuf.version>3.21.3</protobuf.version>
+        <grpc.version>1.48.1</grpc.version>
+        <protobuf.version>3.21.4</protobuf.version>
         <netty.version>4.1.77.Final</netty.version>
 
         <maven.compiler.source>17</maven.compiler.source>
@@ -48,12 +48,7 @@
             <artifactId>protoc-gen-grpc-java</artifactId>
             <version>${grpc.version}</version>
             <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
+        </dependency> 
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
